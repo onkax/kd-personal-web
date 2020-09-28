@@ -1,0 +1,18 @@
+<section fxLayout="column" fxFlexAlign="stretch">
+    <div fxFlexAlign="center">
+        <p>Welcome to the Material Angular OwnerAccount Application</p>
+    </div>
+
+    <p>In this application we are going to work with:</p>
+
+    <mat-tab-group (selectedTabChange)="executeSelectedChange($event)">
+        <mat-tab label="Material Components">
+            <p>You're logged in with Angular 10 & JWT!!</p>
+            <p>This page can be accessed by <u>all authenticated users</u>.</p>
+        </mat-tab>
+        <mat-tab label="Fully responsive navigation menu">
+            <p>By using material components, we are going to create fully responsive navigation menu, with its side-bar
+                as well.</p>
+        </mat-tab>
+    </mat-tab-group>
+</section>

@@ -1,0 +1,9 @@
+<div fxLayout="column">
+    <a (click)="onSidenavClose()" mat-button routerLink="/blog">Blog</a>
+    <a (click)="onSidenavClose()" mat-button routerLink="/contact">Contact</a>
+    <mat-divider></mat-divider>
+    <a mat-button (click)="onSidenavClose()" routerLink="/admin" *ngIf="isAuthenticated">Dashboard</a>
+    <a mat-button (click)="onSidenavClose()" routerLink="/login" *ngIf="!isAuthenticated">Login</a>
+    <a mat-button (click)="onSidenavClose()" routerLink="/register" *ngIf="!isAuthenticated">Register</a>
+    <a mat-button (click)="logout();onSidenavClose()" *ngIf="isAuthenticated">Logout</a>
+</div>

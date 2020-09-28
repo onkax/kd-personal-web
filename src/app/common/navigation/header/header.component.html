@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    <div fxShow="true" fxHide.gt-sm="true">
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <a mat-button class="companyName" routerLink="/">
+        <img src="../../../../assets/img/logo.png" height="60">
+    </a>
+    <span class="example-spacer"></span>
+    <div fxShow="true" fxHide.lt-md>
+        <a mat-button routerLink="/">Home</a>
+        <a mat-button routerLink="/blog">Blog</a>
+        <a mat-button routerLink="/contact">Contact</a>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+        <theme-picker></theme-picker>
+        <a mat-button routerLink="/admin" *ngIf="isAuthenticated">Dashboard</a>
+        <a mat-button routerLink="/login" *ngIf="!isAuthenticated">Login</a>
+        <a mat-button routerLink="/register" *ngIf="!isAuthenticated">Register</a>
+        <a mat-button (click)="logout()" *ngIf="isAuthenticated">Logout</a>
+    </div>
+</mat-toolbar>
