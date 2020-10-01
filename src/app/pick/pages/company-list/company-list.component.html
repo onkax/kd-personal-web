@@ -1,0 +1,14 @@
+<div class="button-flex-container">
+    <button mat-raised-button color="primary" routerLink="/add-company">Add Company <mat-icon>add</mat-icon></button>
+</div>
+<div class="c-container" >
+    <div class="c-item" *ngFor="let company of companyList; let i = index">
+        <a routerLink="/company/{{company.id}}">
+            <div class="">{{company.name}}</div>
+            <div class="">{{company.spend}} {{company.currency}}</div>
+            <div class="">{{company.ability.max}}</div>
+            <div class="">{{company.ability.min}}</div>
+            <div class="">{{company.notes}}</div>
+        </a>
+    </div>
+</div>

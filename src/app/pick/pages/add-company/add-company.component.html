@@ -1,0 +1,37 @@
+<div class="login-form-flex">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Register</mat-card-title>
+      </mat-card-header>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-card-content>
+          <mat-form-field>
+            <input matInput placeholder="Username" formControlName="name">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="spend">
+            <input matInput placeholder="currency">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="ability.max">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="ability.min">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="notes">
+          </mat-form-field>
+          <br>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="button-flex-container">
+            <button mat-raised-button color="primary" type="submit" class="btn-block" [disabled]="!loginForm.valid">Add</button>
+          </div>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>
