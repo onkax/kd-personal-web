@@ -10,18 +10,24 @@ import { Company } from "../../data/company/company";
   styleUrls: ['./add-company.component.scss']
 })
 export class AddCompanyComponent implements OnInit {
-  loginForm: FormGroup;
+  addForm: FormGroup;
   company: Company;
   constructor(private formBuilder: FormBuilder, private companyService: CompanyService) { }
 
   ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
+    this.addForm = this.formBuilder.group({
       name: ['', Validators.required],
+      spend: ['', Validators.required],
+      currency: ['', Validators.required],
+      min: ['', Validators.required],
+      max: ['', Validators.required],
+      notes: ['', Validators.required]
     });
   }
 
   onSubmit() {
-    if (this.loginForm.valid) {
+    if (this.addForm.valid) {
+      this.company = this.addForm.value;
       this.companyService.addCompany(this.company);
     }
   }

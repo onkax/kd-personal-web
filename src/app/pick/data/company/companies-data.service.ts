@@ -20,9 +20,9 @@ export class CompanyService {
     addCompany(company: Company): any {
         if (company == null || company == undefined || company.name == undefined || company.name == '') return false;
         
-        var isValidSpent = this.validateSpend(company.spend, company.ability);
+        //var isValidSpent = this.validateSpend(company.spend, company.ability);
 
-        if(!isValidSpent) return Error("Please enter valid spend information");
+        //if(!isValidSpent) return Error("Please enter valid spend information");
 
         company.id = Math.floor((Math.random() * 1000) + 1);
         CompanyList.push(company);

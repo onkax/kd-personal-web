@@ -3,33 +3,33 @@
       <mat-card-header>
         <mat-card-title>Register</mat-card-title>
       </mat-card-header>
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
         <mat-card-content>
           <mat-form-field>
-            <input matInput placeholder="Username" formControlName="name">
+            <input matInput placeholder="Company Name" formControlName="name">
           </mat-form-field>
           <br>
           <mat-form-field>
-            <input matInput placeholder="spend">
-            <input matInput placeholder="currency">
+            <input matInput placeholder="spend" formControlName="spend">
+            <input matInput placeholder="currency" formControlName="currency">
           </mat-form-field>
           <br>
           <mat-form-field>
-            <input matInput placeholder="ability.max">
+            <input matInput placeholder="max" formControlName="max">
           </mat-form-field>
           <br>
           <mat-form-field>
-            <input matInput placeholder="ability.min">
+            <input matInput placeholder="min" formControlName="min">
           </mat-form-field>
           <br>
           <mat-form-field>
-            <input matInput placeholder="notes">
+            <input matInput placeholder="notes" formControlName="notes">
           </mat-form-field>
           <br>
         </mat-card-content>
         <mat-card-actions>
           <div class="button-flex-container">
-            <button mat-raised-button color="primary" type="submit" class="btn-block" [disabled]="!loginForm.valid">Add</button>
+            <button mat-raised-button color="primary" type="submit" class="btn-block" [disabled]="!addForm.valid">Add</button>
           </div>
         </mat-card-actions>
       </form>
