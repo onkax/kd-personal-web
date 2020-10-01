@@ -20,7 +20,7 @@ export class RegisterComponent extends BaseComponent {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required]
+      name: ['', Validators.required]
     });
   }
 

@@ -186,6 +186,8 @@ table-of-contents {
     display: flex;
     flex-flow: row wrap;
     padding: 8px;
+    min-height: 50px;
+    background-color: lightsteelblue;
 }
 
 .main-conent{
