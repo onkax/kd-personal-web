@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -32,6 +32,7 @@ import { CompanyListComponent } from './pick/pages/company-list/company-list.com
 import { AddCompanyComponent } from './pick/pages/add-company/add-company.component';
 import { CompanyDetailComponent } from './pick/pages/company-detail/company-detail.component';
 import { CompanyService } from './pick/data/company/companies-data.service';
+import { DialogComponent } from './common/modal/dialog.component';
 
 @NgModule({
     imports: [
@@ -41,7 +42,8 @@ import { CompanyService } from './pick/data/company/companies-data.service';
         AppRoutingModule,
         BrowserAnimationsModule,
         MaterialModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        FormsModule
     ],
     declarations: [
         AppComponent,
@@ -59,7 +61,8 @@ import { CompanyService } from './pick/data/company/companies-data.service';
         FooterComponent,
         CompanyListComponent,
         AddCompanyComponent,
-        CompanyDetailComponent
+        CompanyDetailComponent,
+        DialogComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

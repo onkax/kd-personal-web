@@ -7,7 +7,7 @@ export const CompanyList: Company[] = [
         ability: { max: 10, min: 5 },
         currency: "try",
         notes: "Test note..",
-        spend: 8
+        spend: '\$8.00'
     },
     {
         id:2,
@@ -15,7 +15,7 @@ export const CompanyList: Company[] = [
         ability: { max: 10, min: 5 },
         currency: "try",
         notes: "Test note..",
-        spend: 8
+        spend: '\$8.00'
     },
     {
         id:3,
@@ -23,7 +23,7 @@ export const CompanyList: Company[] = [
         ability: { max: 10, min: 5 },
         currency: "try",
         notes: "Test note..",
-        spend: 8
+        spend: '\$8.00'
     },
     {
         id:4,
@@ -31,6 +31,6 @@ export const CompanyList: Company[] = [
         ability: { max: 10, min: 5 },
         currency: "try",
         notes: "Test note..",
-        spend: 8
+        spend: '\$8.00'
     }
 ];
