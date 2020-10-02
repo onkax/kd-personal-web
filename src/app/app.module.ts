@@ -28,6 +28,10 @@ import { TableOfContentsComponent } from './common/navigation/table-of-contents/
 import { BlogComponent } from './main/blog/blog.component';
 import { ContentLayoutComponent } from './common/content-layout/content-layout.component';
 import { FooterComponent } from './common/navigation/footer/footer.component';
+import { CompanyListComponent } from './pick/pages/company-list/company-list.component';
+import { AddCompanyComponent } from './pick/pages/add-company/add-company.component';
+import { CompanyDetailComponent } from './pick/pages/company-detail/company-detail.component';
+import { CompanyService } from './pick/data/company/companies-data.service';
 
 @NgModule({
     imports: [
@@ -52,12 +56,16 @@ import { FooterComponent } from './common/navigation/footer/footer.component';
         RegisterComponent,
         TableOfContentsComponent,
         BlogComponent,
-        FooterComponent
+        FooterComponent,
+        CompanyListComponent,
+        AddCompanyComponent,
+        CompanyDetailComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
         LoaderService,
+        CompanyService,
         { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
     ],
     bootstrap: [AppComponent]

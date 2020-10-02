@@ -34,9 +34,10 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ThemePickerModule } from './theme-picker';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [ModalComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,

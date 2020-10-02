@@ -8,6 +8,9 @@ import { AuthGuard } from './_helpers/auth.guard';
 import { Role } from './_models/role';
 import { RegisterComponent } from './main/register/register.component';
 import { BlogComponent } from './main/blog/blog.component';
+import { CompanyListComponent } from './pick/pages/company-list/company-list.component';
+import { CompanyDetailComponent } from './pick/pages/company-detail/company-detail.component';
+import { AddCompanyComponent } from './pick/pages/add-company/add-company.component';
 
 const routes: Routes = [
     {
@@ -31,6 +34,18 @@ const routes: Routes = [
     {
         path: 'blog',
         component: BlogComponent
+    },
+    {
+        path: 'companies',
+        component: CompanyListComponent
+    },
+    {
+        path: 'company/:id',
+        component: CompanyDetailComponent
+    },
+    {
+        path: 'add-company',
+        component: AddCompanyComponent
     },
     { path: '**', redirectTo: '' }
 ];
