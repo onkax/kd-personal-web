@@ -1,0 +1,13 @@
+
+<h1 mat-dialog-title>Notes</h1>
+<div mat-dialog-content>
+  <p>What's your notes to this company?</p>
+  <mat-form-field>
+    <mat-label>Notes:</mat-label>
+    <textarea matInput rows="5" cols="40" placeholder="Notes" [(ngModel)]="data.notes" cdkFocusInitial></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data.notes">Ok</button>
+</div>

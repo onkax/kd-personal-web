@@ -1,37 +1,44 @@
 <div class="login-form-flex">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Register</mat-card-title>
-      </mat-card-header>
-      <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
-        <mat-card-content>
-          <mat-form-field>
-            <input matInput placeholder="Company Name" formControlName="name">
-          </mat-form-field>
-          <br>
-          <mat-form-field>
-            <input matInput placeholder="spend" formControlName="spend">
-            <input matInput placeholder="currency" formControlName="currency">
-          </mat-form-field>
-          <br>
-          <mat-form-field>
-            <input matInput placeholder="max" formControlName="max">
-          </mat-form-field>
-          <br>
-          <mat-form-field>
-            <input matInput placeholder="min" formControlName="min">
-          </mat-form-field>
-          <br>
-          <mat-form-field>
-            <input matInput placeholder="notes" formControlName="notes">
-          </mat-form-field>
-          <br>
-        </mat-card-content>
-        <mat-card-actions>
-          <div class="button-flex-container">
-            <button mat-raised-button color="primary" type="submit" class="btn-block" [disabled]="!addForm.valid">Add</button>
-          </div>
-        </mat-card-actions>
-      </form>
-    </mat-card>
-  </div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="addform" (ngSubmit)="onSubmit()">
+      <mat-card-content>
+        <mat-form-field>
+          <input matInput placeholder="Company Name" formControlName="name">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input type="number" matInput placeholder="max" formControlName="max">
+          <mat-error *ngIf="addform?.controls?.max?.hasError('invalid')">
+            <p>Max should be higher than min!</p>
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input type="number" matInput placeholder="min" formControlName="min">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput placeholder="spend" formControlName="spend">
+          <mat-error *ngIf="addform?.controls?.spend?.hasError('invalid')">
+            <p>Spend should be between Max and  Min!</p>
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <textarea matInput placeholder="notes" rows="5" cols="40" (click)="openDialog()" formControlName="notes"
+            readonly></textarea>
+        </mat-form-field>
+        <br>
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="button-flex-container">
+          <button mat-raised-button color="primary" type="submit" class="btn-block"
+            [disabled]="!addform.valid">Add</button>
+        </div>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

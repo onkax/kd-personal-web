@@ -1,14 +1,22 @@
 <div class="button-flex-container">
-    <button mat-raised-button color="primary" routerLink="/add-company">Add Company <mat-icon>add</mat-icon></button>
+    <button mat-raised-button color="primary" routerLink="/add-company">Add Company <mat-icon>add</mat-icon>
+    </button>
 </div>
-<div class="c-container" >
-    <div class="c-item" *ngFor="let company of companyList; let i = index">
-        <a routerLink="/company/{{company.id}}">
-            <div class="">{{company.name}}</div>
-            <div class="">{{company.spend}} {{company.currency}}</div>
-            <div class="">{{company.ability.max}}</div>
-            <div class="">{{company.ability.min}}</div>
+    <mat-card style="margin:10px" *ngFor="let company of companyList; let i = index">
+        <mat-card-header fxFlex="30">
+            <mat-card-title>{{company.name}}</mat-card-title>
+            <mat-icon>build</mat-icon>
+            <mat-card-title>{{company.spend}}</mat-card-title>
+            <mat-card-subtitle>{{company.ability.max}} - {{company.ability.min}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content fxFlex="65" fxLayoutAlign="start">
             <div class="">{{company.notes}}</div>
-        </a>
-    </div>
-</div>
+        </mat-card-content>
+        <mat-card-actions>
+            <div class="button-flex-container">
+                <button mat-raised-button color="primary" class="btn-block" routerLink="/company/{{company.id}}">Details</button>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+
+

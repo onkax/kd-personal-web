@@ -1,7 +1,7 @@
 export class Company {
     id: number;
     name: string;
-    spend: number;
+    spend: string;
     currency: string;
     ability: SpendAbility;
     notes: string;

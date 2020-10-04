@@ -1,7 +1,12 @@
-<div class="citem">
-        <div class="">{{company.name}}</div>
-        <div class="">{{company.spend}} {{company.currency}}</div>
-        <div class="">{{company.ability.max}}</div>
-        <div class="">{{company.ability.min}}</div>
-        <div class="">{{company.notes}}</div>
-</div>
+<mat-card>
+        <mat-card-header fxFlex="30">
+                <mat-card-title>{{company.name}}</mat-card-title>
+                <mat-icon>build</mat-icon>
+		<mat-card-title>{{company.spend}}</mat-card-title>
+		<mat-card-subtitle>{{company.ability.max}} - {{company.ability.min}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content fxFlex="65" fxLayoutAlign="start">
+                <div class="">{{company.notes}}</div>
+        </mat-card-content>
+</mat-card>
+<br><br>
