@@ -33,6 +33,7 @@ import { AddCompanyComponent } from './pick/pages/add-company/add-company.compon
 import { CompanyDetailComponent } from './pick/pages/company-detail/company-detail.component';
 import { CompanyService } from './pick/data/company/companies-data.service';
 import { DialogComponent } from './common/modal/dialog.component';
+import { ContactComponent } from './main/contact/contact.component';
 
 @NgModule({
     imports: [
@@ -62,7 +63,8 @@ import { DialogComponent } from './common/modal/dialog.component';
         CompanyListComponent,
         AddCompanyComponent,
         CompanyDetailComponent,
-        DialogComponent
+        DialogComponent,
+        ContactComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

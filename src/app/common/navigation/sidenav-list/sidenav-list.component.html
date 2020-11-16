@@ -1,8 +1,7 @@
 <div fxLayout="column">
     <a (click)="onSidenavClose()" mat-button routerLink="/companies">Companies</a>
-    <a (click)="onSidenavClose()" mat-button routerLink="/add-company">Add Company</a>
-    <!-- <a (click)="onSidenavClose()" mat-button routerLink="/blog">Blog</a> -->
-    <!-- <a (click)="onSidenavClose()" mat-button routerLink="/contact">Contact</a> -->
+    <a (click)="onSidenavClose()" mat-button routerLink="/blog">Blog</a>
+    <a (click)="onSidenavClose()" mat-button routerLink="/contact">Contact</a>
     <mat-divider></mat-divider>
     <a mat-button (click)="onSidenavClose()" routerLink="/admin" *ngIf="isAuthenticated">Dashboard</a>
     <a mat-button (click)="onSidenavClose()" routerLink="/login" *ngIf="!isAuthenticated">Login</a>

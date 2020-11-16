@@ -11,6 +11,7 @@ import { BlogComponent } from './main/blog/blog.component';
 import { CompanyListComponent } from './pick/pages/company-list/company-list.component';
 import { CompanyDetailComponent } from './pick/pages/company-detail/company-detail.component';
 import { AddCompanyComponent } from './pick/pages/add-company/add-company.component';
+import { ContactComponent } from './main/contact/contact.component';
 
 const routes: Routes = [
     {
@@ -36,16 +37,24 @@ const routes: Routes = [
         component: BlogComponent
     },
     {
+        path: 'contact',
+        component: ContactComponent
+    },
+    {
         path: 'companies',
-        component: CompanyListComponent
+        component: CompanyListComponent,
     },
     {
         path: 'company/:id',
-        component: CompanyDetailComponent
+        component: CompanyDetailComponent,
+        canActivate: [AuthGuard],
+        data: { roles: [Role.Admin] }
     },
     {
         path: 'add-company',
-        component: AddCompanyComponent
+        component: AddCompanyComponent,
+        canActivate: [AuthGuard],
+        data: { roles: [Role.Admin] }
     },
     { path: '**', redirectTo: '' }
 ];
